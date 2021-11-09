@@ -6,12 +6,13 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, InputRequired, Email
 from flask_ckeditor import CKEditorField, CKEditor
 from flask_bootstrap import Bootstrap
+import os
 
-MY_EMAIL = 'djon9920@gmail.com'
-MY_PASSWORD = 'abc123()'
-
+MY_EMAIL = os.environ.get("MY_EMAIL")
+MY_PASSWORD = os.environ.get("export MY_PASSWORD")
+MAIN_EMAIL = os.environ.get("MAIN_EMAIL")
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf'
+app.config['SECRET_KEY'] = 'SECRET_KEY'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
@@ -33,8 +34,8 @@ def home():
         with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
             connection.login(user=MY_EMAIL, password=MY_PASSWORD)
-            connection.sendmail(from_addr="djon9920@gmail.com",
-                                to_addrs="aigul.djon@gmail.com",
+            connection.sendmail(from_addr="MY_EMAIL",
+                                to_addrs="MAIN_EMAIL",
                                 msg=f"Subject:Message from your personal site\n\nName: {data['name']}\n"
                                     f"Email: {data['email']}\nMessage: {data['message']}")
 
