@@ -1,0 +1,5 @@
+Flask==2.0.1
+Flask_Bootstrap==3.3.7.1
+Flask_CKEditor==0.4.6
+Flask_WTF==0.15.1
+WTForms==2.3.3
