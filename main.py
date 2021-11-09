@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for
 import smtplib
 import datetime
 from flask_wtf import FlaskForm
@@ -9,8 +9,8 @@ from flask_bootstrap import Bootstrap
 import os
 
 MY_EMAIL = os.environ.get("MY_EMAIL")
-MY_PASSWORD = os.environ.get("export MY_PASSWORD")
-MAIN_EMAIL = os.environ.get("MAIN_EMAIL")
+MY_PASSWORD = os.environ.get("MY_PASS")
+MAIN_EMAIL = os.environ.get("MAIN_MAIL")
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 ckeditor = CKEditor(app)
@@ -35,13 +35,12 @@ def home():
             connection.starttls()
             connection.login(user=MY_EMAIL, password=MY_PASSWORD)
             connection.sendmail(from_addr="MY_EMAIL",
-                                to_addrs="MAIN_EMAIL",
+                                to_addrs="aigul.djon@gmail.com",
                                 msg=f"Subject:Message from your personal site\n\nName: {data['name']}\n"
                                     f"Email: {data['email']}\nMessage: {data['message']}")
 
         return redirect(url_for('home'))
     return render_template('index.html', form=form, year=current_year)
-
 
 
 if __name__ == '__main__':
