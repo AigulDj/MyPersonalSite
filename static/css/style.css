@@ -55,6 +55,11 @@ ul {
 .nav-list {
     margin: auto 0;
 }
+@media (max-width: 520px){
+.nav-list {
+    display: contents;
+    }
+
 .nav-item {
     display: inline-flex;
 }
@@ -110,6 +115,7 @@ button.cv-download {
 @media (min-width: 1600px), (max-width: 600px){
 .ornament {
      opacity: 0;
+     width: 0;
      }
 }
 .a-home-row {
@@ -155,8 +161,13 @@ p.home-subtitle {
     justify-content: center;
 }
 /*To not let tile go under navbar*/
-#about, #projects, #contact, #skills{
+#about, #projects, #contact, #skills {
     padding-top: 65px;
+}
+@media only screen and (max-width: 520px) {
+#about, #projects, #contact, #skills {
+    padding-top: 75px;
+    }
 }
 .a-tile {
     display: inline-grid;
