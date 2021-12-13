@@ -49,11 +49,16 @@
 <header class="a-nav">
     <nav class="nav-container">
         <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Home</a></li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">
+                <img src="static/assets/img/favicon_io/favicon-32x32.png">
+                </a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
             <li class="nav-item"><a class="nav-link" href="#projects">Projects</a>
-            </li><li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li></ul>
+            </li><li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
         <form method="get" action="static/assets/img/Aigul_Djon_CV.docx.pdf">
             <button class="nav-link cv-download" type="submit">Download my CV</button>
         </form>
@@ -62,7 +67,7 @@
 
 <!--HOME-->
 <section class="a-home" id="home">
-    <img class="ornament" src="static/assets/img/kg-pic.png">
+    <img class="ornament" src="static/assets/img/kg-pic3.png">
     <div class="a-home-row">
         <div class="home-text-box">
             <h1 class="home-title">Hi, I'm Aigul.</h1>
@@ -226,6 +231,7 @@
             <div class="row">
 
                 <div class="col-lg-8 col-md-10 mx-auto">
+                    {{ form.csrf_token }}
                     {{ wtf.quick_form(form, novalidate=True) }}
                 </div>
             </div>

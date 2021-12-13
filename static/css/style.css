@@ -69,7 +69,7 @@ ul {
 }
 @media (max-width: 720px){
 .nav-link {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     font-size: 1em;
     }
 }
@@ -107,7 +107,7 @@ button.cv-download {
     background: #F05454;
     bottom: 30%;
 }
-@media (min-width: 1600px){
+@media (min-width: 1600px), (max-width: 600px){
 .ornament {
      opacity: 0;
      }
