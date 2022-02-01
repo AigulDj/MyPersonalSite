@@ -47,36 +47,25 @@ ul {
     margin: .5rem auto;
 
 }
-@media (max-width: 720px){
-.nav-container {
-    justify-content: center;
+.nav-list {
+    margin: auto auto auto 0;
+}
+@media (max-width: 725px){
+.nav-list {
+    display: none;
     }
 }
-.nav-list {
-    margin: auto 0;
-}
-@media (max-width: 520px){
-.nav-list {
-    display: contents;
-    }
-
 .nav-item {
     display: inline-flex;
 }
 .nav-link {
     font-size: 1.2em;
     color: #30475E;
-    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    /**padding: 0.5rem 1.5rem 0.5rem 0.5rem;**/
 }
 .nav-link:hover {
     color: #F05454;
     font-size: 1.1em;
-}
-@media (max-width: 720px){
-.nav-link {
-    padding: 0.5rem;
-    font-size: 1em;
-    }
 }
 button.cv-download {
     border: none;
@@ -99,6 +88,17 @@ button.cv-download {
     border-radius: 50%;
     transition: all 2s ease-out;
     left: -25px;
+    z-index: 1;
+}
+.ornament:hover {
+    background: #F05454;
+    bottom: 30%;
+}
+@media (min-width: 1600px), (max-width: 960px){
+.ornament {
+     opacity: 0;
+     width: 0;
+     }
 }
 .a-home {
     display: flex;
@@ -106,17 +106,6 @@ button.cv-download {
     position: relative;
     z-index: 0;
     margin: auto;
-    padding-top: 135px;
-}
-.ornament:hover {
-    background: #F05454;
-    bottom: 30%;
-}
-@media (min-width: 1600px), (max-width: 600px){
-.ornament {
-     opacity: 0;
-     width: 0;
-     }
 }
 .a-home-row {
     width: 1200px;
@@ -124,15 +113,17 @@ button.cv-download {
     margin: auto;
     overflow: hidden;
     display: inline-flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     color: #F05454;
+    padding-top: 130px
 }
 @media only screen and (max-width: 960px) {
 .a-home-row {
     text-align: center;
     justify-content: center;
+    padding-top: 70px;
+    flex-wrap: wrap;
     }
 }
 p.home-subtitle {
@@ -164,16 +155,16 @@ p.home-subtitle {
 #about, #projects, #contact, #skills {
     padding-top: 65px;
 }
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 690px) {
 #about, #projects, #contact, #skills {
-    padding-top: 75px;
+    padding-top: 10px;
     }
 }
 .a-tile {
     display: inline-grid;
     width: 100%;
     border-radius: 20px;
-    padding: 3em 3em 4em;
+    padding: 3em 1em;
     justify-content: center;
     align-items: center;
     color: #DDD;
@@ -228,7 +219,6 @@ p.home-subtitle {
 .my-believing {
     grid-area: my-believing;
     text-align: center;
-    margin: 0 30px;
 }
 .my-believing h4 {
     color:#F05454;
@@ -255,19 +245,20 @@ p.home-subtitle {
 }
  /*skills & projects*/
  .dropdown {
-    position: relative;
     border: solid 1px #DDD;
     border-radius: 10px;
     padding: 10px;
     min-height: 200px;
     min-width: auto;
+    text-align: center
 }
 @media only screen and (max-width: 690px) {
     .dropdown {
         min-height: 100px;
-        min-width: auto;
+        /*min-width: auto;*/
     }
 }
+
 /*SKILLS*/
 .skills-1 { grid-area: skills-1; }
 .skills-2 { grid-area: skills-2; }
@@ -290,12 +281,9 @@ p.home-subtitle {
 @media only screen and (max-width: 690px){
 .a-tile.skills {
     grid-template-areas:
-       'title' 'skills-1'
-       'skills-2' 'skills-3'
-       'skills-4' 'skills-5'
-       'skills-6' 'skills-7'
-       'skills-8' 'skills-9';
-    justify-items: center;
+       'title' 'skills-1' 'skills-2' 'skills-3' 'skills-4'
+       'skills-5' 'skills-6' 'skills-7' 'skills-8' 'skills-9';
+    /*justify-items: center;*/
     display: inline-block;
     text-align: center;
     }
@@ -313,6 +301,12 @@ p.home-subtitle {
         font-size: 2em;
         padding: 0;
  }
+}
+@media only screen and (min-width: 690px) and (max-width: 960px){
+.dropdown i {
+    font-size: 3em;
+    padding: 2rem;
+    }
 }
 /*PROJECTS*/
 .proj-1 { grid-area: proj-1; }
@@ -364,6 +358,11 @@ sup {
 .dropdown:hover .dropdown-content { display: block; }
 .dropdown:hover .dropbtn { color: #30475E; }
 
+@media screen and (max-width: 1024px) and (min-width: 690px) {
+    .a-tile.skills, .a-tile.projects {
+        grid-gap: 2em;
+    }
+}
 /*** CONTACT ***/
 .a-contact {
     max-width: 100%;

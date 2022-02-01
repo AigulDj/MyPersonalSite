@@ -1,6 +1,6 @@
 This favicon was generated using the following font:
 
-- Font Title: Stylish
-- Font Author: Copyright (c) 1992-2018 AsiaSoft Inc. Seoul Korea All Rights Reserved.
-- Font Source: http://fonts.gstatic.com/s/stylish/v10/m8JSjfhPYriQkk7-fo35dLxEdmo.ttf
+- Font Title: Moon Dance
+- Font Author: Copyright 2004 The Moon Dance Project Authors (https://github.com/googlefonts/moondance)
+- Font Source: http://fonts.gstatic.com/s/moondance/v1/WBLgrEbUbFlYW9ekmGawe2XiKMiokE4.ttf
 - Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
