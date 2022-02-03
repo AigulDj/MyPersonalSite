@@ -50,7 +50,7 @@
 
     <nav class="nav-container">
          <div class="logo">
-            <a class="navbar-brand" href="#home">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
             <img src="static/assets/img/favicon_io/favicon.ico"></a>
         </div>
         <ul class="nav-list">
@@ -223,18 +223,21 @@
         {% import "bootstrap/wtf.html" as wtf %}
         <div class="container">
             {% if msg_sent %}
-                <h1>What took you so long?</h1>
-             {% else %}
-                <p class="contact-title"> Want to get in touch?<br>
-                    Fill out the form below to send me a message and I will get back to you as soon as possible!
-                </p>
+            <p class="contact-title">Hello {{name}} :) <br> Thank you for your message! I will get back to you as soon as possible!</p>
+            {% elif msg_sent == False %}
+            <p class="contact-title">Oops, something went wrong :( <br> But you can always contact me via one of my social pages below:</p>
+            {% else %}
+            <p class="contact-title"> Want to get in touch?<br>
+                Fill out the form below to send me a message and I will get back to you as soon as possible!
+            </p>
             {% endif %}
             <div class="row">
-
+                {% if form  %}
                 <div class="col-lg-8 col-md-10 mx-auto">
                     {{ form.csrf_token }}
                     {{ wtf.quick_form(form, novalidate=True) }}
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

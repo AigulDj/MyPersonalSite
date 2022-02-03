@@ -29,19 +29,22 @@ class ConnectForm(FlaskForm):
 def home():
     form = ConnectForm()
     current_year = datetime.datetime.now().year
+
     if request.method == "POST" and form.validate_on_submit():
         data = request.form
-        with smtplib.SMTP("smtp.gmail.com") as connection:
-            connection.starttls()
-            connection.login(user=MY_EMAIL, password=MY_PASSWORD)
-            connection.sendmail(from_addr=MY_EMAIL,
-                                to_addrs=MAIN_EMAIL,
-                                msg=f"Subject:Message from your personal site\n\nName: {data['name']}\n"
-                                    f"Email: {data['email']}\nMessage: {data['message']}")
-
-        return redirect(url_for('home'))
+        name = data['name']
+        try:
+            with smtplib.SMTP("smtp.gmail.com") as connection:
+                connection.starttls()
+                connection.login(user=MY_EMAIL, password=MY_PASSWORD)
+                connection.sendmail(from_addr=MY_EMAIL,
+                                    to_addrs=MAIN_EMAIL,
+                                    msg=f"Subject:Message from your personal site\n\nName: {data['name']}\n"
+                                        f"Email: {data['email']}\nMessage: {data['message']}")
+            return render_template('index.html', year=current_year, msg_sent=True, name=name)
+        except:
+            return render_template('index.html', year=current_year, msg_sent=False)
     return render_template('index.html', form=form, year=current_year)
-
 
 
 if __name__ == '__main__':
