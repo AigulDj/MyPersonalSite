@@ -45,7 +45,6 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     margin: .5rem auto;
-
 }
 .nav-list {
     margin: auto auto auto 0;
@@ -116,7 +115,7 @@ button.cv-download {
     justify-content: space-between;
     align-items: center;
     color: #F05454;
-    padding-top: 130px
+    padding-top: 130px;
 }
 @media only screen and (max-width: 960px) {
 .a-home-row {
@@ -173,7 +172,7 @@ p.home-subtitle {
 }
 .a-tile:hover {
     padding: 3em 3em 5em;
-    filter: drop-shadow(20px 50px 75px #7e777a); /*make shadow around the item form*/
+    filter: drop-shadow(20px 50px 75px #7e777a); /*makes shadow around the item form*/
 }
 .a-tile-title {
     color: #F05454;
@@ -221,7 +220,7 @@ p.home-subtitle {
     text-align: center;
 }
 .my-believing h4 {
-    color:#F05454;
+    color: #F05454;
     margin-bottom: 20px;
 }
 .belief ul {
@@ -302,7 +301,7 @@ p.home-subtitle {
         padding: 0;
  }
 }
-@media only screen and (min-width: 690px) and (max-width: 960px){
+@media only screen and (min-width: 690px) and (max-width: 960px) {
 .dropdown i {
     font-size: 3em;
     padding: 2rem;
@@ -442,7 +441,6 @@ p.help-block {
 .fab:hover {
     color: #30475E;
 }
-
 footer p {
     margin: 20px auto 50px;
     text-align: center;
